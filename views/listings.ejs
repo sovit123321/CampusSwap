@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browse - CampusSwap</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>CampusSwap</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/listings">Browse</a>
+            <a href="/listings/new">Sell Item</a>
+            <a href="/chatbot">🤖 AI Assistant</a>
+        </div>
+
+    </nav>
+
+
+    <section class="listings-page">
+
+        <h1>Browse Listings</h1>
+
+        <p class="subtitle">
+            Find useful items from students around your campus.
+        </p>
+
+
+        <!-- Search -->
+
+        <form action="/listings" method="GET" class="search-form">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="🔍 Search items..."
+                value="<%= search || '' %>"
+            >
+
+
+            <select name="category">
+
+                <option value="">All Categories</option>
+
+                <option value="Books"
+                    <%= category === "Books" ? "selected" : "" %>>
+                    Books
+                </option>
+
+                <option value="Electronics"
+                    <%= category === "Electronics" ? "selected" : "" %>>
+                    Electronics
+                </option>
+
+                <option value="Furniture"
+                    <%= category === "Furniture" ? "selected" : "" %>>
+                    Furniture
+                </option>
+
+                <option value="Hostel Items"
+                    <%= category === "Hostel Items" ? "selected" : "" %>>
+                    Hostel Items
+                </option>
+
+                <option value="Clothing"
+                    <%= category === "Clothing" ? "selected" : "" %>>
+                    Clothing
+                </option>
+
+                <option value="Other"
+                    <%= category === "Other" ? "selected" : "" %>>
+                    Other
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+
+        <!-- Listings -->
+
+        <div class="listings-grid">
+
+            <% listings.forEach(listing => { %>
+
+                <div class="listing-card">
+
+
+                    <!-- Fixed image area -->
+
+                    <div class="listing-image">
+
+                        <% if (listing.image) { %>
+
+                            <img
+                                src="<%= listing.image %>"
+                                alt="<%= listing.title %>"
+                            >
+
+                        <% } else { %>
+
+                            <div class="no-image">
+                                📦
+                                <span>No Image</span>
+                            </div>
+
+                        <% } %>
+
+                    </div>
+
+
+                    <!-- Listing information -->
+
+                    <div class="listing-info">
+
+                        <h2>
+                            <%= listing.title %>
+                        </h2>
+
+                        <h3>
+                            ₹<%= listing.price %>
+                        </h3>
+
+                        <p>
+                            <strong>Category:</strong>
+                            <%= listing.category %>
+                        </p>
+
+                        <p>
+                            <strong>Condition:</strong>
+                            <%= listing.condition || "Not specified" %>
+                        </p>
+
+
+                        <a
+                            href="/listings/<%= listing._id %>"
+                            class="view-btn"
+                        >
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+
+        <% if (listings.length === 0) { %>
+
+            <div class="no-results">
+
+                <h2>No listings found</h2>
+
+                <p>
+                    Try a different search or category.
+                </p>
+
+            </div>
+
+        <% } %>
+
+
+    </section>
+
+</body>
+
+</html>

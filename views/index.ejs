@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSwap - Student Marketplace</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+    <h2>CampusSwap</h2>
+
+    <div>
+
+        <a href="/">Home</a>
+
+        <a href="/listings">Browse</a>
+
+        <a href="/listings/new">Sell Item</a>
+
+        <a href="/chatbot">🤖 AI Assistant</a>
+
+
+        <% if (user) { %>
+
+            <span>
+                👋 Hi, <%= user.name %>
+            </span>
+
+            <a href="/logout">Logout</a>
+
+        <% } else { %>
+
+            <a href="/login">Login</a>
+
+            <a href="/signup">Sign Up</a>
+
+        <% } %>
+
+    </div>
+
+</nav>
+
+
+    <!-- Hero -->
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                🎓 Built for Students
+            </span>
+
+            <h1>
+                Buy. Sell. Swap.
+                <span>Within Your Campus.</span>
+            </h1>
+
+            <p>
+                CampusSwap is a student marketplace where you can
+                buy, sell, exchange and donate useful items
+                within your college community.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="/listings" class="btn">
+                    Browse Items
+                </a>
+
+                <a href="/listings/new" class="btn secondary-btn">
+                    Sell an Item
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <h2>Why CampusSwap?</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🛒</div>
+
+                <h3>Student Marketplace</h3>
+
+                <p>
+                    Find useful products from students
+                    around your campus.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">💰</div>
+
+                <h3>Affordable</h3>
+
+                <p>
+                    Buy and sell pre-owned items
+                    at student-friendly prices.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🏫</div>
+
+                <h3>Campus Focused</h3>
+
+                <p>
+                    Connect with students within
+                    your college community.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🤖</div>
+
+                <h3>Smart Assistant</h3>
+
+                <p>
+                    Get quick answers about buying,
+                    selling and using CampusSwap.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+
+    <section class="categories">
+
+        <h2>Browse Categories</h2>
+
+        <p class="category-subtitle">
+            Find exactly what you're looking for.
+        </p>
+
+
+        <div class="category-container">
+
+            <a href="/listings?category=Books" class="category">
+                📚
+                <span>Books</span>
+            </a>
+
+            <a href="/listings?category=Electronics" class="category">
+                💻
+                <span>Electronics</span>
+            </a>
+
+            <a href="/listings?category=Furniture" class="category">
+                🪑
+                <span>Furniture</span>
+            </a>
+
+            <a href="/listings?category=Hostel%20Items" class="category">
+                🎒
+                <span>Hostel Items</span>
+            </a>
+
+            <a href="/listings?category=Clothing" class="category">
+                👕
+                <span>Clothing</span>
+            </a>
+
+            <a href="/listings?category=Other" class="category">
+                📦
+                <span>Other</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="home-cta">
+
+        <h2>Have something you don't need?</h2>
+
+        <p>
+            Turn unused items into useful things for another student.
+        </p>
+
+        <a href="/listings/new" class="btn">
+            Start Selling
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 CampusSwap • Built for Students
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

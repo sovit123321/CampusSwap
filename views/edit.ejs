@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Listing - CampusSwap</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>CampusSwap</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/listings">Browse</a>
+            <a href="/listings/new">Sell Item</a>
+            <a href="/chatbot">🤖 AI Assistant</a>
+        </div>
+
+    </nav>
+
+
+    <section class="form-container">
+
+        <h1>Edit Listing</h1>
+
+
+        <form
+            action="/listings/<%= listing._id %>/edit"
+            method="POST"
+        >
+
+
+            <label>Item Name</label>
+
+            <input
+                type="text"
+                name="title"
+                value="<%= listing.title %>"
+                required
+            >
+
+
+            <label>Price</label>
+
+            <input
+                type="number"
+                name="price"
+                value="<%= listing.price %>"
+                required
+            >
+
+
+            <label>Category</label>
+
+            <select name="category" required>
+
+                <option value="Books"
+                    <%= listing.category === "Books" ? "selected" : "" %>>
+                    Books
+                </option>
+
+                <option value="Electronics"
+                    <%= listing.category === "Electronics" ? "selected" : "" %>>
+                    Electronics
+                </option>
+
+                <option value="Furniture"
+                    <%= listing.category === "Furniture" ? "selected" : "" %>>
+                    Furniture
+                </option>
+
+                <option value="Hostel Items"
+                    <%= listing.category === "Hostel Items" ? "selected" : "" %>>
+                    Hostel Items
+                </option>
+
+                <option value="Clothing"
+                    <%= listing.category === "Clothing" ? "selected" : "" %>>
+                    Clothing
+                </option>
+
+                <option value="Other"
+                    <%= listing.category === "Other" ? "selected" : "" %>>
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>Condition</label>
+
+            <select name="condition" required>
+
+                <option value="New"
+                    <%= listing.condition === "New" ? "selected" : "" %>>
+                    New
+                </option>
+
+                <option value="Like New"
+                    <%= listing.condition === "Like New" ? "selected" : "" %>>
+                    Like New
+                </option>
+
+                <option value="Good"
+                    <%= listing.condition === "Good" ? "selected" : "" %>>
+                    Good
+                </option>
+
+                <option value="Used"
+                    <%= listing.condition === "Used" ? "selected" : "" %>>
+                    Used
+                </option>
+
+            </select>
+
+
+            <label>Image URL</label>
+
+            <input
+                type="url"
+                name="image"
+                value="<%= listing.image || '' %>"
+            >
+
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                required
+            ><%= listing.description %></textarea>
+
+
+           <label>Seller Name</label>
+
+<input
+    type="text"
+    name="sellerName"
+    value="<%= listing.sellerName || '' %>"
+>
+
+
+<label>Contact</label>
+
+<input
+    type="text"
+    name="sellerContact"
+    value="<%= listing.sellerContact || '' %>"
+>
+
+
+            <button type="submit">
+                Update Listing
+            </button>
+
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>

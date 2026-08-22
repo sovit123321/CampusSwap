@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sell Item - CampusSwap</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h2>CampusSwap</h2>
+
+      <div>
+        <a href="/">Home</a>
+        <a href="/listings">Browse</a>
+        <a href="/chatbot">🤖 AI Assistant</a>
+      </div>
+    </nav>
+
+    <section class="form-container">
+      <h1>Sell an Item</h1>
+
+      <form action="/listings" method="POST">
+        <!-- Item Name -->
+
+        <label>Item Name</label>
+
+        <input
+          type="text"
+          name="title"
+          placeholder="e.g. Casio Calculator"
+          required
+        />
+
+        <label>Image URL</label>
+
+        <input type="text" name="image" placeholder="Paste image URL" />
+
+        <!-- Price -->
+
+        <label>Price</label>
+
+        <input type="number" name="price" placeholder="e.g. 500" required />
+
+        <!-- Category -->
+
+        <label>Category</label>
+
+        <select name="category" required>
+          <option value="">Select Category</option>
+
+          <option value="Books">Books</option>
+
+          <option value="Electronics">Electronics</option>
+
+          <option value="Furniture">Furniture</option>
+
+          <option value="Hostel Items">Hostel Items</option>
+
+          <option value="Clothing">Clothing</option>
+
+          <option value="Other">Other</option>
+        </select>
+
+        <!-- Condition -->
+
+        <label>Condition</label>
+
+        <select name="condition" required>
+          <option value="">Select Condition</option>
+
+          <option value="New">New</option>
+
+          <option value="Like New">Like New</option>
+
+          <option value="Good">Good</option>
+
+          <option value="Used">Used</option>
+        </select>
+
+        <!-- Description -->
+
+        <label>Description</label>
+
+        <textarea
+          name="description"
+          placeholder="Describe your item..."
+          required
+        ></textarea>
+
+        <!-- Seller -->
+
+        <label>Seller Name</label>
+
+        <input
+          type="text"
+          name="sellerName"
+          placeholder="Enter your name"
+          required
+        />
+
+        <!-- Contact -->
+
+        <label>Contact</label>
+
+        <input
+          type="text"
+          name="sellerContact"
+          placeholder="Phone or email"
+          required
+        />
+
+        <button type="submit">Post Listing</button>
+      </form>
+    </section>
+  </body>
+</html>
